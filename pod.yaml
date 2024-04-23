@@ -44,8 +44,8 @@ kind: Service
 metadata:
   name: docker-registry
 spec:
-  selector: null
-  app: registry
+  selector:
+    app: registry
 ports:
   - port: 5000
     targetPort: 5000
