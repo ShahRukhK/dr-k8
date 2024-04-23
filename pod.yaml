@@ -8,26 +8,26 @@ spec:
   containers:
     - name: registry
   image: 'registry:2.6.2'
-  volumeMounts:
-    - name: repo-vol
-      mountPath: /var/lib/registry
-    - name: certs-vol
-      mountPath: /certs
-      readOnly: true
-    - name: auth-vol
-      mountPath: /auth
-      readOnly: true
-  env:
-    - name: REGISTRY_AUTH
-      value: htpasswd
-    - name: REGISTRY_AUTH_HTPASSWD_REALM
-      value: Registry Realm
-    - name: REGISTRY_AUTH_HTPASSWD_PATH
-      value: /auth/htpasswd
-    - name: REGISTRY_HTTP_TLS_CERTIFICATE
-      value: /certs/tls.crt
-    - name: REGISTRY_HTTP_TLS_KEY
-      value: /certs/tls.key
+volumeMounts:
+  - name: repo-vol
+    mountPath: /var/lib/registry
+  - name: certs-vol
+    mountPath: /certs
+    readOnly: true
+  - name: auth-vol
+    mountPath: /auth
+    readOnly: true
+env:
+  - name: REGISTRY_AUTH
+    value: htpasswd
+  - name: REGISTRY_AUTH_HTPASSWD_REALM
+    value: Registry Realm
+  - name: REGISTRY_AUTH_HTPASSWD_PATH
+    value: /auth/htpasswd
+  - name: REGISTRY_HTTP_TLS_CERTIFICATE
+    value: /certs/tls.crt
+  - name: REGISTRY_HTTP_TLS_KEY
+    value: /certs/tls.key
 volumes:
   - name: repo-vol
     persistentVolumeClaim: null
