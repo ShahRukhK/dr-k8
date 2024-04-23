@@ -4,7 +4,7 @@ metadata:
   name: registry-pv
 spec:
   capacity:
-    storage: 80Gi
+    storage: 60Gi
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
