@@ -4,7 +4,7 @@ persistence:
   enabled: true
   size: 60Gi
   deleteEnabled: true
-  storageClass: csi-cinder-classic
-  existingClaim: docker-registry-pv-claim
+  storageClass: local-storage
+  existingClaim: registry-pvc
 secrets:
-  htpasswd: admin:$2y$05$OLdzYP6osAG/XNriBXAiYu/18uD5RxwfCLrgdSofjEwE1XyOyYJzO
+  htpasswd: admin:$2y$05$Uv6J97nIVy98ax0x6Dogh.MBOAM9ixIAzyswqRPfepcKACQl2RHrG
