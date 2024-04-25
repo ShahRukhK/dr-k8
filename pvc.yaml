@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 60Gi
-  storageClassName: docker-registry-local-storage
+  storageClassName: local-storage
